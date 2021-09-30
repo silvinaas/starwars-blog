@@ -4,11 +4,14 @@ import Proptypes from "prop-types";
 export const Carta = props => {
 	return (
 		<div className="card" style={{ width: "18rem" }}>
-			<img src="..." className="card-img-top" alt="..." />
+			<img src="https://via.placeholder.com/400x200" className="card-img-top" alt="..." />
 			<div className="card-body">
 				<h5 className="card-title">{props.nombre}</h5>
 				<p className="card-text">
-					Some quick example text to build on the card title and make up the bulk of the cards content.
+					Gender: {props.genero} <br />
+					Hair color: {props.colordepelo}
+					<br />
+					Eye color: {props.colordeojo}
 				</p>
 				<a href="#" className="btn btn-primary">
 					Learn more!
@@ -18,6 +21,9 @@ export const Carta = props => {
 	);
 };
 
-Carta.proptypes = {
-	nombre: Proptypes.string
+Carta.propTypes = {
+	nombre: Proptypes.string,
+	genero: Proptypes.string,
+	colordepelo: Proptypes.string,
+	colordeojo: Proptypes.string
 };

@@ -15,6 +15,7 @@ export const Home = () => {
 					store.people.map((personaje, indice) => {
 						return (
 							<Carta
+								indice={indice}
 								key={indice}
 								nombre={personaje.name}
 								genero={personaje.gender}

@@ -1,5 +1,6 @@
 import React from "react";
 import Proptypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export const Carta = props => {
 	return (
@@ -13,8 +14,13 @@ export const Carta = props => {
 					<br />
 					Eye color: {props.colordeojo}
 				</p>
-				<a href="#" className="btn btn-primary">
-					Learn more!
+				<Link to={"/single/" + props.indice}>
+					<a href="#" className="btn btn-primary">
+						Learn more!
+					</a>
+				</Link>
+				<a href="#" className="btn btn-light border border-warning">
+					<i className="corazon far fa-heart" />
 				</a>
 			</div>
 		</div>
@@ -22,6 +28,7 @@ export const Carta = props => {
 };
 
 Carta.propTypes = {
+	indice: Proptypes.number,
 	nombre: Proptypes.string,
 	genero: Proptypes.string,
 	colordepelo: Proptypes.string,

@@ -19,7 +19,7 @@ export const Carta = props => {
 						Learn more!
 					</a>
 				</Link>
-				<a href="#" className="btn btn-light border border-warning">
+				<a href="#" className="btn btn-light border border-warning link-hover-dark">
 					<i className="corazon far fa-heart" />
 				</a>
 			</div>

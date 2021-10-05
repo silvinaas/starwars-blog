@@ -2,15 +2,15 @@ import React from "react";
 import Proptypes from "prop-types";
 import { Link } from "react-router-dom";
 
-export const CartaPlaneta = props => {
+export const CartaVehiculo = props => {
 	return (
 		<div className="card" style={{ width: "18rem" }}>
 			<img src="https://via.placeholder.com/400x200" className="card-img-top" alt="..." />
 			<div className="card-body">
-				<h5 className="card-title">{props.nombreplaneta}</h5>
+				<h5 className="card-title">{props.nombrevehiculo}</h5>
 				<p className="card-text">
-					Population : {props.poblacion} <br />
-					Terrain : {props.terreno}
+					Model : {props.modelo} <br />
+					Cost in credits : {props.precio}
 				</p>
 				<a href="#" className="btn btn-primary">
 					Learn more!
@@ -23,8 +23,8 @@ export const CartaPlaneta = props => {
 	);
 };
 
-CartaPlaneta.propTypes = {
-	nombreplaneta: Proptypes.string,
-	poblacion: Proptypes.string,
-	terreno: Proptypes.string
+CartaVehiculo.propTypes = {
+	nombrevehiculo: Proptypes.string,
+	modelo: Proptypes.string,
+	precio: Proptypes.string
 };

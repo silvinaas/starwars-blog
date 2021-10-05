@@ -8,14 +8,19 @@ export const Single = props => {
 	const params = useParams();
 	return (
 		<div className="jumbotron">
-			<h1 className="display-4"> {store.people[params.theid].name}</h1>
-			<p className="lead">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus ultrices purus, at aliquet orci
-				auctor nec. Praesent ut vestibulum ex. Cras at eros ac quam fringilla sagittis. Nullam eget feugiat
-				justo, tincidunt dictum dolor.{" "}
-			</p>
+			<div className="row justify-content-start">
+				<img src="https://via.placeholder.com/800x600" className="col-4 img-fluid" alt="..." />
 
-			<hr className="my-4" />
+				<div className="col-4 ">
+					<h1 className="display-4"> {store.people[params.theid].name}</h1>
+					<p className="lead">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus ultrices purus, at
+						aliquet orci auctor nec. Praesent ut vestibulum ex. Cras at eros ac quam fringilla sagittis.
+						Nullam eget feugiat justo, tincidunt dictum dolor.{" "}
+					</p>
+				</div>
+			</div>
+			<hr className="text-danger" size="5" width="50%" />
 
 			<Link to="/">
 				<span className="btn btn-primary btn-lg" href="#" role="button">

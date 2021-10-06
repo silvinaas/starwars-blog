@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import Proptypes from "prop-types";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const CartaVehiculo = props => {
+	const { store, actions } = useContext(Context);
 	return (
 		<div className="card" style={{ width: "18rem" }}>
 			<img src="https://via.placeholder.com/400x200" className="card-img-top" alt="..." />
@@ -15,9 +17,11 @@ export const CartaVehiculo = props => {
 				<a href="#" className="btn btn-primary">
 					Learn more!
 				</a>
-				<a href="#" className="btn btn-light border border-warning">
+				<button
+					onClick={() => actions.addFavorite(props.nombrevehiculo)}
+					className="btn btn-light border border-warning link-hover-dark">
 					<i className="corazon far fa-heart" />
-				</a>
+				</button>
 			</div>
 		</div>
 	);

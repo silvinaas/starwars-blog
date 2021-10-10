@@ -12,7 +12,7 @@ export const Home = () => {
 	return (
 		<div className="container-fluid">
 			<h2 className="text-danger">Characters</h2>
-			<div className="row flex-row flex-nowrap">
+			<div className="row flex-row flex-nowrap scroll">
 				{store.people.length > 0 ? (
 					store.people.map((personaje, indice) => {
 						return (

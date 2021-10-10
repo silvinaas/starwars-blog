@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import starwars from "../../img/stwrs.png";
+import "../../styles/home.scss";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
@@ -8,7 +10,7 @@ export const Navbar = () => {
 		<nav className="navbar navbar-light bg-light mb-3">
 			<Link to="/">
 				<span className="navbar-brand mb-0 h1">
-					<i className="fab fa-jedi-order fa-5x" />
+					<img src={starwars} className="starwarsimg" />
 				</span>
 			</Link>
 			<div className="ml-auto">
@@ -20,15 +22,13 @@ export const Navbar = () => {
 							id="dropdownMenuButton1"
 							data-bs-toggle="dropdown"
 							aria-expanded="false">
-							Favorites <span className="badge bg-secondary">0</span>
+							Favorites <span className="badge bg-secondary">{store.favorites.length}</span>
 						</button>
 						<ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 							{store.favorites.map((favorito, index) => {
 								return (
 									<li key={index}>
-										<a className="dropdown-item" href="#">
-											{favorito}
-										</a>
+										<a className="dropdown-item">{favorito}</a>
 									</li>
 								);
 							})}

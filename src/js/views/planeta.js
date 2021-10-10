@@ -3,7 +3,7 @@ import Proptypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Single = props => {
+export const Planeta = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	return (
@@ -12,7 +12,7 @@ export const Single = props => {
 				<img src="https://via.placeholder.com/800x600" className="col-4 img-fluid" alt="..." />
 
 				<div className="col-4 ">
-					<h1 className="display-4"> {store.people[params.theid].name}</h1>
+					<h1 className="display-4"> {store.planets[params.theid].name}</h1>
 					<p className="lead">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus ultrices purus, at
 						aliquet orci auctor nec. Praesent ut vestibulum ex. Cras at eros ac quam fringilla sagittis.
@@ -33,12 +33,12 @@ export const Single = props => {
 					<div className="col-2 text-danger">Eye color</div>
 				</div>
 				<div className="row">
-					<div className="col-2 text-danger">{store.people[params.theid].name}</div>
-					<div className="col-2 text-danger">{store.people[params.theid].birth_year}</div>
-					<div className="col-2 text-danger">{store.people[params.theid].gender}</div>
-					<div className="col-2 text-danger ">{store.people[params.theid].height}</div>
-					<div className="col-2 text-danger">{store.people[params.theid].skin_color}</div>
-					<div className="col-2 text-danger">{store.people[params.theid].eye_color}</div>
+					<div className="col-2 text-danger">{store.planets[params.theid].name}</div>
+					<div className="col-2 text-danger">{store.planets[params.theid].birth_year}</div>
+					<div className="col-2 text-danger">{store.planets[params.theid].gender}</div>
+					<div className="col-2 text-danger ">{store.planets[params.theid].height}</div>
+					<div className="col-2 text-danger">{store.planets[params.theid].skin_color}</div>
+					<div className="col-2 text-danger">{store.planets[params.theid].eye_color}</div>
 				</div>
 			</div>
 			<Link to="/">
@@ -50,6 +50,6 @@ export const Single = props => {
 	);
 };
 
-Single.propTypes = {
+Planeta.propTypes = {
 	match: Proptypes.object
 };

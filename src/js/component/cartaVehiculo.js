@@ -14,12 +14,12 @@ export const CartaVehiculo = props => {
 					Model : {props.modelo} <br />
 					Cost in credits : {props.precio}
 				</p>
-				<a href="#" className="btn btn-primary">
-					Learn more!
-				</a>
-				<button
-					onClick={() => actions.addFavorite(props.nombrevehiculo)}
-					className="btn btn-light border border-warning link-hover-dark">
+				<Link to={"/vehiculo/" + props.indice}>
+					<a href="#" className="btn btn-primary">
+						Learn more!
+					</a>
+				</Link>
+				<button onClick={() => actions.addFavorite(props.nombrevehiculo)} className="btn btn-outline-warning">
 					<i className="corazon far fa-heart" />
 				</button>
 			</div>
@@ -28,6 +28,7 @@ export const CartaVehiculo = props => {
 };
 
 CartaVehiculo.propTypes = {
+	indice: Proptypes.number,
 	nombrevehiculo: Proptypes.string,
 	modelo: Proptypes.string,
 	precio: Proptypes.string

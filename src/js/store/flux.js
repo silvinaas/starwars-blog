@@ -50,6 +50,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 				console.log("agregando favorito");
 				const store = getStore();
 				setStore({ favorites: [...store.favorites, name] });
+			},
+
+			removeFavorite: indexfav => {
+				console.log("quitando favorito", indexfav);
+				const store = getStore();
+				const filteredFav = store.favorites.filter((favorito, index) => {
+					return index != indexfav;
+				});
+				setStore({ favorites: filteredFav });
 			}
 		}
 	};

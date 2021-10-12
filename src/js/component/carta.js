@@ -21,10 +21,8 @@ export const Carta = props => {
 						Learn more!
 					</a>
 				</Link>
-				<button
-					onClick={() => actions.addFavorite(props.nombre)}
-					className="btn btn-light border border-warning link-hover-dark">
-					<i className="corazon far fa-heart" />
+				<button onClick={() => actions.addFavorite(props.nombre)} className="btn btn-outline-warning">
+					<i className="corazon far fa-heart " />
 				</button>
 			</div>
 		</div>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import starwars from "../../img/stwrs.png";
 import "../../styles/home.scss";
+import Proptypes from "prop-types";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
@@ -13,11 +14,11 @@ export const Navbar = () => {
 					<img src={starwars} className="starwarsimg" />
 				</span>
 			</Link>
-			<div className="ml-auto">
-				<Link to="/demo">
+			<div className="d-flex">
+				<Link to="/">
 					<div className="dropdown">
 						<button
-							className="btn btn-primary dropdown-toggle"
+							className="btn btn-primary dropdown-toggle justify-content-end"
 							type="button"
 							id="dropdownMenuButton1"
 							data-bs-toggle="dropdown"
@@ -27,8 +28,16 @@ export const Navbar = () => {
 						<ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 							{store.favorites.map((favorito, index) => {
 								return (
-									<li key={index}>
-										<a className="dropdown-item">{favorito}</a>
+									<li key={index} className="d-flex justify-content-end">
+										<a className="dropdown-item">
+											{favorito}
+											<button
+												type="button"
+												className="btn-close ms-3 btn btn-outline-danger"
+												aria-label="Close"
+												onClick={() => actions.removeFavorite(index)}
+											/>
+										</a>
 									</li>
 								);
 							})}
@@ -38,4 +47,8 @@ export const Navbar = () => {
 			</div>
 		</nav>
 	);
+};
+
+Navbar.propTypes = {
+	nombre: Proptypes.string
 };

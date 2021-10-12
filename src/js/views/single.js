@@ -25,12 +25,12 @@ export const Single = props => {
 			</div>
 			<div className="container">
 				<div className="row">
-					<div className="col-2 text-danger">Name</div>
-					<div className="col-2 text-danger">Birth year</div>
-					<div className="col-2 text-danger">Gender</div>
-					<div className="col-2 text-danger">Height</div>
-					<div className="col-2 text-danger">Skin color</div>
-					<div className="col-2 text-danger">Eye color</div>
+					<div className="col-2 text-danger fw-bold">Name</div>
+					<div className="col-2 text-danger fw-bold">Birth year</div>
+					<div className="col-2 text-danger fw-bold">Gender</div>
+					<div className="col-2 text-danger fw-bold">Height</div>
+					<div className="col-2 text-danger fw-bold">Skin color</div>
+					<div className="col-2 text-danger fw-bold">Eye color</div>
 				</div>
 				<div className="row">
 					<div className="col-2 text-danger">{store.people[params.theid].name}</div>
@@ -41,6 +41,7 @@ export const Single = props => {
 					<div className="col-2 text-danger">{store.people[params.theid].eye_color}</div>
 				</div>
 			</div>
+			<br />
 			<Link to="/">
 				<span className="btn btn-primary btn-lg" href="#" role="button">
 					Back home

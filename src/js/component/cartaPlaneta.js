@@ -14,12 +14,12 @@ export const CartaPlaneta = props => {
 					Population : {props.poblacion} <br />
 					Terrain : {props.terreno}
 				</p>
-				<a href="#" className="btn btn-primary">
-					Learn more!
-				</a>
-				<button
-					onClick={() => actions.addFavorite(props.nombreplaneta)}
-					className="btn btn-light border border-warning link-hover-dark">
+				<Link to={"/planeta/" + props.indice}>
+					<a href="#" className="btn btn-primary">
+						Learn more!
+					</a>
+				</Link>
+				<button onClick={() => actions.addFavorite(props.nombreplaneta)} className="btn btn-outline-warning">
 					<i className="corazon far fa-heart" />
 				</button>
 			</div>
@@ -28,6 +28,7 @@ export const CartaPlaneta = props => {
 };
 
 CartaPlaneta.propTypes = {
+	indice: Proptypes.number,
 	nombreplaneta: Proptypes.string,
 	poblacion: Proptypes.string,
 	terreno: Proptypes.string
